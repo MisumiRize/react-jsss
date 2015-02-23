@@ -10,7 +10,6 @@ function buildProps(props) {
     className: props.className || '',
     style: props.style ? assign({}, props.style) : {}
   }
-
   return applyStyles(propsSeed, props.styles)
 }
 
@@ -19,6 +18,5 @@ ReactElement.createElement = (type, props, ...children) => {
   if (props && typeof type === 'string') {
     props = assign(props, buildProps(props))
   }
-
   return createElement.apply(this, [type, props].concat(children))
 }

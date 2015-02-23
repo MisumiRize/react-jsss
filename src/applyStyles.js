@@ -2,6 +2,7 @@
 
 function applyStyle(props, style) {
   if (style.isCompiled()) {
+    props.className = props.className || ''
     props.className += ' ' + style.className
     return props
   }
@@ -10,8 +11,8 @@ function applyStyle(props, style) {
   Object.keys(style.style).forEach((attr) => {
     styleDecl[attr] = style.style[attr]
   })
-  props.style = styleDecl
 
+  props.style = styleDecl
   return props
 }
 
