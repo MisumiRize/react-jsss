@@ -1,6 +1,6 @@
 import assert from 'power-assert'
 import React from 'react'
-let ReactJsss = require('../lib/index')
+import ReactJsss from '../'
 
 import {jsdom} from 'jsdom'
 global.document = jsdom()

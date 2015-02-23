@@ -3,6 +3,7 @@
 import classgen from 'jsss-compiler/lib/modules/classgen'
 import taggen from 'jsss-compiler/lib/modules/taggen'
 import ExecutionEnvironment from 'react/lib/ExecutionEnvironment'
+import assign from 'react/lib/Object.assign'
 
 import ClassStyle from './ClassStyle'
 import _ from './shimComponent'
@@ -12,7 +13,7 @@ let classes = {}
 var captureStyles = true
 var counter = 0
 
-export function createStyle(props, className = genClassName()) {
+export default function createStyle(props, className = genClassName()) {
   let styleDecl = new ClassStyle(className, props)
   if (captureStyles) {
     classes[className] = styleDecl
@@ -20,14 +21,14 @@ export function createStyle(props, className = genClassName()) {
   return styleDecl
 }
 
-export function registerTagStyle(tagName, props) {
+function registerTagStyle(tagName, props) {
   if (!captureStyles) {
     throw new Error('createTagStyle should be called before inject()')
   }
   tags[tagName] = props
 }
 
-export function compile() {
+function compile() {
   let jsssClasses = Object.keys(classes).reduce((carry, className) => {
     carry[className] = {all: classes[className].style}
     return carry
@@ -38,7 +39,7 @@ export function compile() {
   }).join('\n\n')
 }
 
-export function inject() {
+function inject() {
   if (!ExecutionEnvironment.canUseDOM || window.__ReactJsss__) {
     return
   }
@@ -54,3 +55,10 @@ export function inject() {
 function genClassName() {
   return 'c' + counter++
 }
+
+assign(createStyle, {
+  createStyle: createStyle,
+  registerTagStyle: registerTagStyle,
+  compile: compile,
+  inject: inject
+});
