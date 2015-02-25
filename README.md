@@ -1,5 +1,7 @@
 # React JSSS
 
+[![Circle CI](https://circleci.com/gh/MisumiRize/react-jsss.svg?style=svg)](https://circleci.com/gh/MisumiRize/react-jsss)
+
 React JSSS is JavaScript based styler for [React](https://facebook.github.io/react/) components inspired by [React Style](https://github.com/js-next/react-style) and [JSSS-Compiler](https://github.com/watilde/jsss-compiler).
 
 ## Installation
@@ -15,7 +17,7 @@ Define styles using JavaScript:
 ```javascript
 var ReactJsss = require('react-jsss')
 
-var styles = ReactJsss.createStyle({
+var styles = ReactJsss({
   color: 'red',
   backgroundColor: 'white'
 })
@@ -29,7 +31,7 @@ var React = require('react')
 var HelloWorld = React.createClass({
 
   render() {
-    var dynamicStyles = ReactJsss.createStyle({color: this.props.color})
+    var dynamicStyles = ReactJsss({color: this.props.color})
     return React.createElement('div', {styles: [styles, dynamicStyles]}, 'Hello, world!')
   }
 })

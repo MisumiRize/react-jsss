@@ -1,7 +1,7 @@
 {
   "name": "react-jsss",
   "version": "0.0.1",
-  "description": "",
+  "description": "Integrate JSSS CSS preprocessor into React.js components",
   "main": "lib/index.js",
   "files": [
     "lib"
@@ -14,9 +14,7 @@
     "type": "git",
     "url": "git://github.com/MisumiRize/react-jsss.git"
   },
-  "author": {
-    "name": "Rize MISUMI"
-  },
+  "author": "Rize MISUMI",
   "license": "MIT",
   "bugs": {
     "url": "https://github.com/MisumiRize/react-jsss/issues"
