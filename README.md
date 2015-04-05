@@ -1,6 +1,6 @@
 # React JSSS
 
-[![Circle CI](https://circleci.com/gh/MisumiRize/react-jsss.svg?style=svg)](https://circleci.com/gh/MisumiRize/react-jsss)
+[![Build Status](https://travis-ci.org/MisumiRize/react-jsss.svg?branch=master)](https://travis-ci.org/MisumiRize/react-jsss) [![Dependency Status](https://david-dm.org/MisumiRize/react-jsss.svg)](https://david-dm.org/MisumiRize/react-jsss)
 
 React JSSS is JavaScript based styler for [React](https://facebook.github.io/react/) components inspired by [React Style](https://github.com/js-next/react-style) and [JSSS-Compiler](https://github.com/watilde/jsss-compiler).
 
