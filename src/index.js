@@ -1,5 +1,3 @@
-'use strict'
-
 import classgen from 'jsss-compiler/lib/modules/classgen'
 import taggen from 'jsss-compiler/lib/modules/taggen'
 import ExecutionEnvironment from 'react/lib/ExecutionEnvironment'

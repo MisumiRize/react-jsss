@@ -1,5 +1,3 @@
-'use strict'
-
 import ReactElement from 'react/lib/ReactElement'
 import assign from 'react/lib/Object.assign'
 

@@ -1,5 +1,3 @@
-'use strict'
-
 function applyStyle(props, style) {
   let styleDecl = props.style || {}
 
